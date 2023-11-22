@@ -20,28 +20,32 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     
-      const res = await fetch('http://127.0.0.1:8000/login/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-    console.log(res);
-
-      if (res.status === 200) {
-        const token = res.data.token;
+      const response = await fetch("http://127.0.0.1:8000/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        const result = await response.json();
+        const token = result.token;
         localStorage.setItem("token", token);
         window.alert("Signed in successfully!");
         navigate("/home");
       } else {
+        const errorData = await response.json(); 
+        console.error(errorData);  
         setError("Login failed");
       }
     } catch (error) {
+      console.error(error);
       setError("An error occurred. Please try again.");
     }
   };
+  
+
   return (
     <div className="flex items-center justify-center h-full mt-24">
       <div
