@@ -1,4 +1,4 @@
-// FileName: TransactionItem.js
+
 
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,12 +16,15 @@ const TransactionItem = ({ transaction, removeTransaction }) => {
         backgroundColor: "#fff",
         borderRadius: "5px",
         padding: "10px 20px",
-        borderRight: `5px solid ${transaction?.transType === "expense" ? "red" : "green"}`,
+        borderRight: `5px solid ${
+          transaction?.transType === "expense" ? "red" : "green"
+        }`,
         marginBottom: "10px",
         cursor: "pointer",
       }}
     >
       <span>{transaction.details}</span>
+      <span>Category: {transaction.category}</span>
       <span>₹{transaction.amount}</span>
       <Button
         variant="success"

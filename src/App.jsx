@@ -6,6 +6,7 @@ import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./Footer/Footer.jsx";
+import Dashboard from "./Dashboard/Dashboard.jsx";
 
 
 
@@ -35,6 +36,8 @@ const App = () => {
      
       <Route path='/' element={<SignIn/>}/>
       <Route path='/sign-up' element={<SignUp/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
+
 
     </Routes>
    <Footer/>

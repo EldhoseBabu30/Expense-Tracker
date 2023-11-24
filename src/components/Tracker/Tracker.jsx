@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import OverviewComponent from "../OverviewComponent/OverViewCOmponent";
-import AddTransaction from "../AddTransaction/AddTransaction";
 import TransactionsContainer from "../TransactionContainer/TransactionContainer";
+import OverviewComponent from "../OverviewComponent/OverViewComponent";
+
 
 const THeading = {
   fontSize: "30px",
